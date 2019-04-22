@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WH_CommonControlLibrary.UIControl.Control
+namespace WHLib_Toolkit.UIControl.Control
 {
     /// <summary>
     /// 路由事件参数
