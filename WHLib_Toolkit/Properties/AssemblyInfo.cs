@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("WHLib_Toolkit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Elysium")]
 [assembly: AssemblyProduct("WHLib_Toolkit")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
