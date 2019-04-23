@@ -23,7 +23,7 @@
             Name="TextBox_Path"
             Grid.Column="1"
             Margin="3,0"
-            HorizontalContentAlignment="{Binding ElementName=SelectPathControl_Main, Path=TextVerticalAlignment}"
+            VerticalContentAlignment="{Binding ElementName=SelectPathControl_Main, Path=TextVerticalAlignment}"
             Text="{Binding ElementName=SelectPathControl_Main, Path=PathText, Mode=TwoWay}"
             TextChanged="TextBox_Path_TextChanged" />
         <Button
