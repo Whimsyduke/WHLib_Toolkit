@@ -230,6 +230,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// 已选择依赖项
         /// </summary>
         public static readonly DependencyProperty IsHaveSelectedProperty = DependencyProperty.Register(nameof(IsHaveSelected), typeof(bool?), typeof(WH_SelectPathControl));
+
         /// <summary>
         /// 已选择属性
         /// </summary>
@@ -237,6 +238,78 @@ namespace WHLib_Toolkit.UIControl.Control
         {
             private set { SetValue(IsHaveSelectedProperty, value); }
             get { return (bool?)GetValue(IsHaveSelectedProperty); }
+        }
+
+        #endregion
+
+        #region 文本垂直模式
+        
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty TextVerticalAlignmentProperty = DependencyProperty.Register(nameof(TextVerticalAlignment), typeof(VerticalAlignment), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public VerticalAlignment TextVerticalAlignment
+        {
+            private set { SetValue(TextVerticalAlignmentProperty, value); }
+            get { return (VerticalAlignment)GetValue(TextVerticalAlignmentProperty); }
+        }
+
+        #endregion
+
+        #region 共享宽度组名
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty ShareSizeGroupNameProperty = DependencyProperty.Register(nameof(ShareSizeGroupName), typeof(string), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public string ShareSizeGroupName
+        {
+            private set { SetValue(ShareSizeGroupNameProperty, value); }
+            get { return (string)GetValue(ShareSizeGroupNameProperty); }
+        }
+
+        #endregion
+
+        #region 使用共享宽度组
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty IsShareSizeGroupProperty = DependencyProperty.Register(nameof(IsShareSizeGroup), typeof(bool), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public bool IsShareSizeGroup
+        {
+            private set { SetValue(IsShareSizeGroupProperty, value); }
+            get { return (bool)GetValue(IsShareSizeGroupProperty); }
+        }
+
+        #endregion
+
+        #region 内容Margin
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty ContentMarginProperty = DependencyProperty.Register(nameof(ContentMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(1)));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public Thickness ContentMargin
+        {
+            private set { SetValue(ContentMarginProperty, value); }
+            get { return (Thickness)GetValue(ContentMarginProperty); }
         }
 
         #endregion

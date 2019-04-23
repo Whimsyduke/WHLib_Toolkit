@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.0.0</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
@@ -14,8 +14,5 @@
     <releaseNotes>Add：打开保存路径控件。</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WPF Whimsyduke</tags>
-    <dependencies>
-      <dependency id="SampleDependency" version="1.0" />
-    </dependencies>
   </metadata>
 </package>

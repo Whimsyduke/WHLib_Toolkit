@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!--*-->
+    <id>WHLib_Toolkit</id>
+    <!--*-->
+    <version>1.0.0.1</version>
+    <title>WHLib_Toolkit</title>
+    <!--*-->
+    <authors>Elysium</authors>
+    <owners>Elysium</owners>
+    <!--
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--*-->
+    <description>WH库 - WPF工具集</description>
+    <!--*-->
+    <releaseNotes>Update：打开保存路径控件</releaseNotes>
+    <copyright>Copyright ©  2019</copyright>
+    <tags>WPF Whimsyduke</tags>
+    <dependencies>
+      <!--
+      <dependency id="SampleDependency" version="1.0" />
+-->
+    </dependencies>
+  </metadata>
+</package>
