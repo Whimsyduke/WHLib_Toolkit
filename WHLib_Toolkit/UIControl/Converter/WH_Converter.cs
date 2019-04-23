@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WH_CommonControlLibrary.UIControl.Converter
+namespace WHLib_Toolkit.UIControl.Converter
 {
     /// <summary>
     /// 取反转换

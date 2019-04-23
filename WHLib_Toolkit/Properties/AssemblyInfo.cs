@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("WHLib_Toolkit")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("WH库 - WPF工具集")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Elysium")]
 [assembly: AssemblyProduct("WHLib_Toolkit")]
