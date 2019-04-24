@@ -224,24 +224,6 @@ namespace WHLib_Toolkit.UIControl.Control
 
         #endregion
 
-        #region 已选择
-
-        /// <summary>
-        /// 已选择依赖项
-        /// </summary>
-        public static readonly DependencyProperty IsHaveSelectedProperty = DependencyProperty.Register(nameof(IsHaveSelected), typeof(bool?), typeof(WH_SelectPathControl));
-
-        /// <summary>
-        /// 已选择属性
-        /// </summary>
-        public bool? IsHaveSelected
-        {
-            private set { SetValue(IsHaveSelectedProperty, value); }
-            get { return (bool?)GetValue(IsHaveSelectedProperty); }
-        }
-
-        #endregion
-
         #region 文本垂直模式
         
         /// <summary>
@@ -254,7 +236,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public VerticalAlignment TextVerticalAlignment
         {
-            private set { SetValue(TextVerticalAlignmentProperty, value); }
+            set { SetValue(TextVerticalAlignmentProperty, value); }
             get { return (VerticalAlignment)GetValue(TextVerticalAlignmentProperty); }
         }
 
@@ -272,7 +254,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public string ShareSizeGroupName
         {
-            private set { SetValue(ShareSizeGroupNameProperty, value); }
+            set { SetValue(ShareSizeGroupNameProperty, value); }
             get { return (string)GetValue(ShareSizeGroupNameProperty); }
         }
 
@@ -290,7 +272,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public bool IsShareSizeGroup
         {
-            private set { SetValue(IsShareSizeGroupProperty, value); }
+            set { SetValue(IsShareSizeGroupProperty, value); }
             get { return (bool)GetValue(IsShareSizeGroupProperty); }
         }
 
@@ -308,8 +290,27 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public Thickness ContentMargin
         {
-            private set { SetValue(ContentMarginProperty, value); }
+            set { SetValue(ContentMarginProperty, value); }
             get { return (Thickness)GetValue(ContentMarginProperty); }
+        }
+
+        #endregion
+
+
+        #region 已选择
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty IsHaveSelectedProperty = DependencyProperty.Register(nameof(IsHaveSelected), typeof(bool?), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public bool? IsHaveSelected
+        {
+            private set { SetValue(IsHaveSelectedProperty, value); }
+            get { return (bool?)GetValue(IsHaveSelectedProperty); }
         }
 
         #endregion
