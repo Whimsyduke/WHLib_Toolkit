@@ -4,17 +4,15 @@
     <!--*-->
     <id>WHLib_Toolkit</id>
     <!--*-->
-    <version>1.0.0.5</version>
+    <version>1.0.0.7</version>
     <title>WHLib_Toolkit</title>
     <!--*-->
     <authors>Elysium</authors>
     <owners>Elysium</owners>
-    <!--
-    <licenseUrl></licenseUrl>
-    <projectUrl></projectUrl>
-    <iconUrl></iconUrl>
--->
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/996icu/996.ICU/blob/master/license</licenseUrl>
+    <projectUrl>https://github.com/Whimsyduke/SC2_CombineData</projectUrl>
+    <iconUrl>https://github.com/Whimsyduke/SC2_GameTranslater/blob/master/IconForUse/Icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <!--*-->
     <description>WH库 - WPF工具集</description>
     <!--*-->
