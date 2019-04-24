@@ -9,8 +9,8 @@
     <!--*-->
     <authors>Elysium</authors>
     <owners>Elysium</owners>
-    <licenseUrl>https://github.com/996icu/996.ICU/blob/master/license</licenseUrl>
-    <projectUrl>https://github.com/Whimsyduke/SC2_CombineData</projectUrl>
+    <licenseUrl>https://github.com/996icu/996.ICU/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Whimsyduke/WHLib_Toolkit</projectUrl>
     <iconUrl>https://github.com/Whimsyduke/SC2_GameTranslater/blob/master/IconForUse/Icon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <!--*-->
