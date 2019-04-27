@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 
 namespace WHLib_Toolkit.UIControl.Control
 {
+    #region 路由事件
+
     /// <summary>
     /// 路由事件参数
     /// </summary>
@@ -44,6 +46,37 @@ namespace WHLib_Toolkit.UIControl.Control
         #endregion
 
     }
+
+    /// <summary>
+    /// 路由事件参数
+    /// </summary>
+    public class IsPathExistRoutedEventArgs : RoutedEventArgs
+    {
+        #region 属性字段
+
+        /// <summary>
+        /// 事件文本
+        /// </summary>
+        public bool? IsExist { set; get; }
+
+        #endregion
+
+        #region 构造函数
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="routedEvent">路由事件</param>
+        /// <param name="source">事件源</param>
+        /// <param name="text">事件文本</param>
+        public IsPathExistRoutedEventArgs(RoutedEvent routedEvent, object source, bool? exist) : base(routedEvent, source)
+        {
+            IsExist = exist;
+        }
+        #endregion
+
+    }
+
+    #endregion
 
     /// <summary>
     /// WH_SelectPathControl.xaml 的交互逻辑
@@ -302,15 +335,24 @@ namespace WHLib_Toolkit.UIControl.Control
         /// <summary>
         /// 已选择依赖项
         /// </summary>
-        public static readonly DependencyProperty IsHaveSelectedProperty = DependencyProperty.Register(nameof(IsHaveSelected), typeof(bool?), typeof(WH_SelectPathControl));
+        public static readonly DependencyProperty IsPathExistProperty = DependencyProperty.Register(nameof(IsPathExist), typeof(bool?), typeof(WH_SelectPathControl));
 
         /// <summary>
         /// 已选择属性
         /// </summary>
-        public bool? IsHaveSelected
+        public bool? IsPathExist
         {
-            private set { SetValue(IsHaveSelectedProperty, value); }
-            get { return (bool?)GetValue(IsHaveSelectedProperty); }
+            private set
+            {
+                bool isChange = value != IsPathExist;
+                SetValue(IsPathExistProperty, value);
+                if(isChange)
+                {
+                    IsPathExistRoutedEventArgs args = new IsPathExistRoutedEventArgs(IsPathExistRoutedEvent, this, value);
+                    this.RaiseEvent(args);
+                }
+            }
+            get { return (bool?)GetValue(IsPathExistProperty); }
         }
 
         #endregion
@@ -329,6 +371,24 @@ namespace WHLib_Toolkit.UIControl.Control
         {
             add { this.AddHandler(TextChangeRoutedEvent, value); }
             remove { this.RemoveHandler(TextChangeRoutedEvent, value); }
+        }
+
+        #endregion
+
+        #region 文本变化路由事件
+
+        /// <summary>
+        /// 文本变化路由事件依赖项
+        /// </summary>
+        public static readonly RoutedEvent IsPathExistRoutedEvent = EventManager.RegisterRoutedEvent(nameof(IsPathExistHandler), RoutingStrategy.Bubble, typeof(EventHandler<IsPathExistRoutedEventArgs>), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        ///  文本变化路由事件属性
+        /// </summary>
+        public event RoutedEventHandler IsPathExistHandler
+        {
+            add { this.AddHandler(IsPathExistRoutedEvent, value); }
+            remove { this.RemoveHandler(IsPathExistRoutedEvent, value); }
         }
 
         #endregion
@@ -359,7 +419,7 @@ namespace WHLib_Toolkit.UIControl.Control
         {
             InitializeComponent();
             ButtonWidth = double.NaN;
-            IsHaveSelected = false;
+            IsPathExist = false;
         }
         #endregion
 
@@ -514,17 +574,17 @@ namespace WHLib_Toolkit.UIControl.Control
             if (File.Exists(path))
             {
                 SelectedFile = new FileInfo(path);
-                IsHaveSelected = true;
+                IsPathExist = true;
             }
             else if (Directory.Exists(path))
             {
                 SelectedDirectory = new DirectoryInfo(path);
-                IsHaveSelected = true;
+                IsPathExist = true;
             }
             else
             {
 
-                IsHaveSelected = false;
+                IsPathExist = false;
             }
             TextChangeRoutedEventArgs args = new TextChangeRoutedEventArgs(TextChangeRoutedEvent, this, path);
             this.RaiseEvent(args);
