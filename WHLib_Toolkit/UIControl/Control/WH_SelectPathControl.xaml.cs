@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WHLib_Toolkit.CommonClass.CommonFunc;
 
 namespace WHLib_Toolkit.UIControl.Control
 {
@@ -424,119 +425,6 @@ namespace WHLib_Toolkit.UIControl.Control
         #endregion
 
         #region 方法
-        /// <summary>
-        /// 打开文件浏览器选择文件
-        /// </summary>
-        /// <param name="textBox">设置路径的TextBox控件</param>
-        /// <param name="filter">文件类型筛选字符串</param>
-        /// <param name="title">标题</param>
-        /// <param name="defaultPath">默认路径</param>
-        /// <returns>OpenFileDialog</returns>
-        static System.Windows.Forms.OpenFileDialog OpenFileDialogGetOpenFile(TextBox textBox, string filter, string title, string defaultPath)
-        {
-            System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog();
-            if (File.Exists(textBox.Text))
-            {
-                fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                fileDialog.InitialDirectory = defaultPath;
-            }
-            else
-            {
-                fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-            fileDialog.Filter = filter;
-            fileDialog.Multiselect = false;
-            fileDialog.RestoreDirectory = true;
-            fileDialog.Title = title;
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = fileDialog.FileName;
-                return fileDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// 保存文件选择路径
-        /// </summary>
-        /// <param name="textBox">设置路径的TextBox控件</param>
-        /// <param name="filter">文件类型筛选字符串</param>
-        /// <param name="title">标题</param>
-        /// <param name="defaultPath">默认路径</param>
-        /// <returns>SaveFileDialog</returns>
-        static System.Windows.Forms.SaveFileDialog OpenFileDialogGetSavePath(TextBox textBox, string filter, string title, string defaultPath)
-        {
-            System.Windows.Forms.SaveFileDialog fileDialog = new System.Windows.Forms.SaveFileDialog();
-
-            if (File.Exists(textBox.Text))
-            {
-                fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                fileDialog.InitialDirectory = defaultPath;
-            }
-            else
-            {
-                fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-
-            fileDialog.Filter = filter;
-            fileDialog.RestoreDirectory = true;
-            fileDialog.Title = title;
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = fileDialog.FileName;
-                return fileDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
-            }
-        }
-        /// <summary>
-        /// 选择文件夹路径
-        /// </summary>
-        /// <param name="textBox">设置路径的TextBox控件</param>
-        /// <param name="description">打开描述</param>
-        /// <param name="defaultPath">默认路径</param>
-        /// <returns>FolderBrowserDialog</returns>
-        static System.Windows.Forms.FolderBrowserDialog OpenDirectoryDialogGetFolder(TextBox textBox, string description, string defaultPath)
-        {
-            System.Windows.Forms.FolderBrowserDialog dirDialog = new System.Windows.Forms.FolderBrowserDialog();
-            if (Directory.Exists(textBox.Text))
-            {
-                dirDialog.SelectedPath = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                dirDialog.SelectedPath = defaultPath;
-            }
-            else
-            {
-                dirDialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-            dirDialog.ShowNewFolderButton = true;
-            dirDialog.Description = description;
-            if (dirDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = dirDialog.SelectedPath;
-                return dirDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
-            }
-        }
         #endregion
 
         #region 控件方法
@@ -550,13 +438,13 @@ namespace WHLib_Toolkit.UIControl.Control
             switch (ControlType)
             {
                 case EnumControlType.LoadFile:
-                    OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    WH_CommonFunc.OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
                     break;
                 case EnumControlType.SaveFile:
-                    OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    WH_CommonFunc.OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
                     break;
                 case EnumControlType.SelectPath:
-                    OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory);
+                    WH_CommonFunc.OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory);
                     break;
                 default:
                     break;
