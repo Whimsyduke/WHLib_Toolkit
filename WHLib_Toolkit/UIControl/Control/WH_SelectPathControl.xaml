@@ -9,20 +9,20 @@
     mc:Ignorable="d">
     <Grid Margin="{Binding ElementName=SelectPathControl_Main, Path=ContentMargin}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" SharedSizeGroup="{Binding ElementName=SelectPathControl_Main, Path=ShareSizeGroupName}" />
+            <ColumnDefinition Width="{Binding ElementName=SelectPathControl_Main, Path=LabelWidth}" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Label
             Name="Label_Tag"
             Grid.Column="0"
-            Margin="0,0,3,0"
-            Content="{Binding ElementName=SelectPathControl_Main, Path=LabelContent}"
-            Grid.IsSharedSizeScope="{Binding ElementName=SelectPathControl_Main, Path=IsShareSizeGroup}" />
+            Margin="{Binding ElementName=SelectPathControl_Main, Path=LabelMargin}"
+            HorizontalAlignment="{Binding ElementName=SelectPathControl_Main, Path=LabeltHorizontalAlignment}"
+            Content="{Binding ElementName=SelectPathControl_Main, Path=LabelContent}" />
         <TextBox
             Name="TextBox_Path"
             Grid.Column="1"
-            Margin="3,0"
+            Margin="{Binding ElementName=SelectPathControl_Main, Path=TextBoxMargin}"
             VerticalContentAlignment="{Binding ElementName=SelectPathControl_Main, Path=TextVerticalAlignment}"
             Text="{Binding ElementName=SelectPathControl_Main, Path=PathText, Mode=TwoWay}"
             TextChanged="TextBox_Path_TextChanged" />
@@ -30,7 +30,7 @@
             Name="Button_Select"
             Grid.Column="2"
             Width="{Binding ElementName=SelectPathControl_Main, Path=ButtonWidth, Mode=TwoWay}"
-            Margin="3,0,0,0"
+            Margin="{Binding ElementName=SelectPathControl_Main, Path=ButtonMargin}"
             Click="Button_Select_Click"
             Content="{Binding ElementName=SelectPathControl_Main, Path=ButtonContent, Mode=TwoWay}" />
     </Grid>

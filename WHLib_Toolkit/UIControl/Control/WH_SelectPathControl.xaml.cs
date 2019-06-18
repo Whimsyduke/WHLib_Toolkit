@@ -258,8 +258,44 @@ namespace WHLib_Toolkit.UIControl.Control
 
         #endregion
 
+        #region 文本水平模式
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty LabelHorizontalAlignmentProperty = DependencyProperty.Register(nameof(LabeltHorizontalAlignment), typeof(HorizontalAlignment), typeof(WH_SelectPathControl));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public HorizontalAlignment LabeltHorizontalAlignment
+        {
+            set { SetValue(LabelHorizontalAlignmentProperty, value); }
+            get { return (HorizontalAlignment)GetValue(LabelHorizontalAlignmentProperty); }
+        }
+
+        #endregion
+
+        #region 标题宽度
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(nameof(LabelWidth), typeof(GridLength), typeof(WH_SelectPathControl), new PropertyMetadata(new GridLength(20, GridUnitType.Auto)));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public GridLength LabelWidth
+        {
+            set { SetValue(LabelWidthProperty, value); }
+            get { return (GridLength)GetValue(LabelWidthProperty); }
+        }
+
+        #endregion
+
         #region 文本垂直模式
-        
+
         /// <summary>
         /// 已选择依赖项
         /// </summary>
@@ -276,48 +312,12 @@ namespace WHLib_Toolkit.UIControl.Control
 
         #endregion
 
-        #region 共享宽度组名
-
-        /// <summary>
-        /// 已选择依赖项
-        /// </summary>
-        public static readonly DependencyProperty ShareSizeGroupNameProperty = DependencyProperty.Register(nameof(ShareSizeGroupName), typeof(string), typeof(WH_SelectPathControl));
-
-        /// <summary>
-        /// 已选择属性
-        /// </summary>
-        public string ShareSizeGroupName
-        {
-            set { SetValue(ShareSizeGroupNameProperty, value); }
-            get { return (string)GetValue(ShareSizeGroupNameProperty); }
-        }
-
-        #endregion
-
-        #region 使用共享宽度组
-
-        /// <summary>
-        /// 已选择依赖项
-        /// </summary>
-        public static readonly DependencyProperty IsShareSizeGroupProperty = DependencyProperty.Register(nameof(IsShareSizeGroup), typeof(bool), typeof(WH_SelectPathControl));
-
-        /// <summary>
-        /// 已选择属性
-        /// </summary>
-        public bool IsShareSizeGroup
-        {
-            set { SetValue(IsShareSizeGroupProperty, value); }
-            get { return (bool)GetValue(IsShareSizeGroupProperty); }
-        }
-
-        #endregion
-
         #region 内容Margin
 
         /// <summary>
         /// 已选择依赖项
         /// </summary>
-        public static readonly DependencyProperty ContentMarginProperty = DependencyProperty.Register(nameof(ContentMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(1)));
+        public static readonly DependencyProperty ContentMarginProperty = DependencyProperty.Register(nameof(ContentMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(0)));
 
         /// <summary>
         /// 已选择属性
@@ -330,6 +330,59 @@ namespace WHLib_Toolkit.UIControl.Control
 
         #endregion
 
+        #region Label Margin 
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty LabelMarginProperty = DependencyProperty.Register(nameof(LabelMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(0)));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public Thickness LabelMargin
+        {
+            set { SetValue(LabelMarginProperty, value); }
+            get { return (Thickness)GetValue(LabelMarginProperty); }
+        }
+
+        #endregion
+
+        #region TextBox Margin
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty TextBoxMarginProperty = DependencyProperty.Register(nameof(TextBoxMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(0)));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public Thickness TextBoxMargin
+        {
+            set { SetValue(TextBoxMarginProperty, value); }
+            get { return (Thickness)GetValue(TextBoxMarginProperty); }
+        }
+
+        #endregion
+
+        #region Button Margin
+
+        /// <summary>
+        /// 已选择依赖项
+        /// </summary>
+        public static readonly DependencyProperty ButtonMarginProperty = DependencyProperty.Register(nameof(ButtonMargin), typeof(Thickness), typeof(WH_SelectPathControl), new PropertyMetadata(new Thickness(0)));
+
+        /// <summary>
+        /// 已选择属性
+        /// </summary>
+        public Thickness ButtonMargin
+        {
+            set { SetValue(ButtonMarginProperty, value); }
+            get { return (Thickness)GetValue(ButtonMarginProperty); }
+        }
+
+        #endregion
 
         #region 已选择
 
