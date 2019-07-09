@@ -429,15 +429,15 @@ namespace WHLib_Toolkit.UIControl.Control
 
         #endregion
 
-        #region 文本变化路由事件
+        #region 路径对象存在路由事件
 
         /// <summary>
-        /// 文本变化路由事件依赖项
+        /// 路径对象存在路由事件依赖项
         /// </summary>
         public static readonly RoutedEvent IsPathExistRoutedEvent = EventManager.RegisterRoutedEvent(nameof(IsPathExistHandler), RoutingStrategy.Bubble, typeof(EventHandler<IsPathExistRoutedEventArgs>), typeof(WH_SelectPathControl));
 
         /// <summary>
-        ///  文本变化路由事件属性
+        ///  路径对象存在路由事件属性
         /// </summary>
         public event RoutedEventHandler IsPathExistHandler
         {
