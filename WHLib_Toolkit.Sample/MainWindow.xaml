@@ -7,50 +7,63 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:whlib="clr-namespace:WHLib_Toolkit.UIControl.Control;assembly=WHLib_Toolkit"
     Title="MainWindow"
-    SizeToContent="Height"
+    SizeToContent="WidthAndHeight"
     mc:Ignorable="d">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <TextBlock
-            Name="TextBlock_Label1"
-            Grid.Row="0"
-            Grid.Column="0"
-            Margin="3"
-            VerticalAlignment="Center"
-            Text="语言配置：" />
-        <whlib:WH_SelectPathControl
-            Name="SelectPath_War3"
-            Grid.Row="0"
-            Grid.Column="1"
-            Grid.ColumnSpan="1"
-            Margin="3"
-            VerticalAlignment="Center"
-            VerticalContentAlignment="Center"
-            ButtonContent="War3路径"
-            ButtonWidth="80"
-            ControlType="LoadFile"
-            Filter="魔兽争霸3启动程序|Warcraft III Launcher.exe"
-            LabelWidth="0"
-            TextBoxMargin="0,0,3,0"
-            TextVerticalAlignment="Center"
-            TitleDescription="选择Warcraft III Launcher.exe" />
-        <TextBlock
-            Name="TextBlock_Label2"
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="3"
-            VerticalAlignment="Center"
-            Text="语言配置：" />
-        <TextBox
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="3" />
+        <TabControl>
+            <TabItem Header="WH_SelectPathControl">
+                <whlib:WH_SearchableListView
+                    Height="500"
+                    Margin="3"
+                    SearchChange="WH_SearchableListView_SearchChangeHandler"
+                    SearchLable="搜索：" />
+            </TabItem>
+            <TabItem Header="WH_SelectPathControl">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Name="TextBlock_Label1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="语言配置：" />
+                    <whlib:WH_SelectPathControl
+                        Name="SelectPath_War3"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="1"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        ButtonContent="War3路径"
+                        ButtonWidth="80"
+                        ControlType="LoadFile"
+                        Filter="魔兽争霸3启动程序|Warcraft III Launcher.exe"
+                        LabelWidth="0"
+                        TextBoxMargin="0,0,3,0"
+                        TextVerticalAlignment="Center"
+                        TitleDescription="选择Warcraft III Launcher.exe" />
+                    <TextBlock
+                        Name="TextBlock_Label2"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="语言配置：" />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="3" />
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

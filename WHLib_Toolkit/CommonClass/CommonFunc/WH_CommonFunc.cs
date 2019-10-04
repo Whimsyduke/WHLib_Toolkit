@@ -25,32 +25,34 @@ namespace WHLib_Toolkit.CommonClass.CommonFunc
         /// <returns>OpenFileDialog</returns>
         public static System.Windows.Forms.OpenFileDialog OpenFileDialogGetOpenFile(TextBox textBox, string filter, string title, string defaultPath)
         {
-            System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog();
-            if (File.Exists(textBox.Text))
+            using (System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog())
             {
-                fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                fileDialog.InitialDirectory = defaultPath;
-            }
-            else
-            {
-                fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-            fileDialog.Filter = filter;
-            fileDialog.Multiselect = false;
-            fileDialog.RestoreDirectory = true;
-            fileDialog.Title = title;
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = fileDialog.FileName;
-                return fileDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
+                if (File.Exists(textBox.Text))
+                {
+                    fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
+                }
+                else if (defaultPath != null && Directory.Exists(defaultPath))
+                {
+                    fileDialog.InitialDirectory = defaultPath;
+                }
+                else
+                {
+                    fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+                }
+                fileDialog.Filter = filter;
+                fileDialog.Multiselect = false;
+                fileDialog.RestoreDirectory = true;
+                fileDialog.Title = title;
+                if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    textBox.Text = fileDialog.FileName;
+                    return fileDialog;
+                }
+                else
+                {
+                    textBox.Text = "";
+                    return null;
+                }
             }
         }
 
@@ -64,33 +66,34 @@ namespace WHLib_Toolkit.CommonClass.CommonFunc
         /// <returns>SaveFileDialog</returns>
         public static System.Windows.Forms.SaveFileDialog OpenFileDialogGetSavePath(TextBox textBox, string filter, string title, string defaultPath)
         {
-            System.Windows.Forms.SaveFileDialog fileDialog = new System.Windows.Forms.SaveFileDialog();
+            using (System.Windows.Forms.SaveFileDialog fileDialog = new System.Windows.Forms.SaveFileDialog())
+            {
+                if (File.Exists(textBox.Text))
+                {
+                    fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
+                }
+                else if (defaultPath != null && Directory.Exists(defaultPath))
+                {
+                    fileDialog.InitialDirectory = defaultPath;
+                }
+                else
+                {
+                    fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+                }
 
-            if (File.Exists(textBox.Text))
-            {
-                fileDialog.InitialDirectory = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                fileDialog.InitialDirectory = defaultPath;
-            }
-            else
-            {
-                fileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-
-            fileDialog.Filter = filter;
-            fileDialog.RestoreDirectory = true;
-            fileDialog.Title = title;
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = fileDialog.FileName;
-                return fileDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
+                fileDialog.Filter = filter;
+                fileDialog.RestoreDirectory = true;
+                fileDialog.Title = title;
+                if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    textBox.Text = fileDialog.FileName;
+                    return fileDialog;
+                }
+                else
+                {
+                    textBox.Text = "";
+                    return null;
+                }
             }
         }
         /// <summary>
@@ -102,30 +105,32 @@ namespace WHLib_Toolkit.CommonClass.CommonFunc
         /// <returns>FolderBrowserDialog</returns>
         public static System.Windows.Forms.FolderBrowserDialog OpenDirectoryDialogGetFolder(TextBox textBox, string description, string defaultPath)
         {
-            System.Windows.Forms.FolderBrowserDialog dirDialog = new System.Windows.Forms.FolderBrowserDialog();
-            if (Directory.Exists(textBox.Text))
+            using (System.Windows.Forms.FolderBrowserDialog dirDialog = new System.Windows.Forms.FolderBrowserDialog())
             {
-                dirDialog.SelectedPath = new FileInfo(textBox.Text).DirectoryName;
-            }
-            else if (defaultPath != null && Directory.Exists(defaultPath))
-            {
-                dirDialog.SelectedPath = defaultPath;
-            }
-            else
-            {
-                dirDialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
-            }
-            dirDialog.ShowNewFolderButton = true;
-            dirDialog.Description = description;
-            if (dirDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox.Text = dirDialog.SelectedPath;
-                return dirDialog;
-            }
-            else
-            {
-                textBox.Text = "";
-                return null;
+                if (Directory.Exists(textBox.Text))
+                {
+                    dirDialog.SelectedPath = new FileInfo(textBox.Text).DirectoryName;
+                }
+                else if (defaultPath != null && Directory.Exists(defaultPath))
+                {
+                    dirDialog.SelectedPath = defaultPath;
+                }
+                else
+                {
+                    dirDialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
+                }
+                dirDialog.ShowNewFolderButton = true;
+                dirDialog.Description = description;
+                if (dirDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    textBox.Text = dirDialog.SelectedPath;
+                    return dirDialog;
+                }
+                else
+                {
+                    textBox.Text = "";
+                    return null;
+                }
             }
         }
 

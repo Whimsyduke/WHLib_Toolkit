@@ -23,5 +23,9 @@ namespace WHLib_Toolkit.Sample
         {
             InitializeComponent();
         }
+
+        private void WH_SearchableListView_SearchChangeHandler(object sender, TextChangedEventArgs e)
+        {
+        }
     }
 }

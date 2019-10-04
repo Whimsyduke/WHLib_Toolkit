@@ -31,7 +31,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public string Text { set; get; }
 
-        #endregion
+        #endregion 属性字段
 
         #region 构造函数
         /// <summary>
@@ -44,7 +44,7 @@ namespace WHLib_Toolkit.UIControl.Control
         {
             Text = text;
         }
-        #endregion
+        #endregion 构造函数
 
     }
 
@@ -60,7 +60,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// </summary>
         public bool? IsExist { set; get; }
 
-        #endregion
+        #endregion 属性字段
 
         #region 构造函数
         /// <summary>
@@ -73,11 +73,11 @@ namespace WHLib_Toolkit.UIControl.Control
         {
             IsExist = exist;
         }
-        #endregion
+        #endregion 构造函数
 
     }
 
-    #endregion
+    #endregion 路由事件
 
     /// <summary>
     /// WH_SelectPathControl.xaml 的交互逻辑
@@ -110,7 +110,7 @@ namespace WHLib_Toolkit.UIControl.Control
         /// <param name="sender">响应对象</param>
         /// <param name="e">响应参数</param>
         public delegate void TextChangeRoutedEventHandler(object sender, TextChangeRoutedEventArgs e);
-        #endregion
+        #endregion 定义
 
         #region 属性
 
@@ -132,7 +132,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (EnumControlType)GetValue(ControlTypeProperty); }
         }
 
-        #endregion
+        #endregion 控件类型
 
         #region 文件类型
 
@@ -150,7 +150,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (string)GetValue(FilterProperty); }
         }
 
-        #endregion
+        #endregion 文件类型
 
         #region 窗口标题
 
@@ -168,7 +168,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (string)GetValue(TitleDescriptionProperty); }
         }
 
-        #endregion
+        #endregion 窗口标题
 
         #region 默认目录
 
@@ -186,7 +186,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (string)GetValue(DefaultDirectoryProperty); }
         }
 
-        #endregion
+        #endregion 默认目录
 
         #region 按钮文本
 
@@ -204,7 +204,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (string)GetValue(ButtonContentProperty); }
         }
 
-        #endregion
+        #endregion 按钮文本
 
         #region 路径文本
 
@@ -221,7 +221,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { SetValue(PathTextProperty, TextBox_Path.Text); return (string)GetValue(PathTextProperty); }
         }
 
-        #endregion
+        #endregion 路径文本
 
         #region 按钮宽度
 
@@ -238,7 +238,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (double)GetValue(ButtonWidthProperty); }
         }
 
-        #endregion
+        #endregion 按钮宽度
 
         #region 标题内容
 
@@ -256,7 +256,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (double)GetValue(LabelContentProperty); }
         }
 
-        #endregion
+        #endregion 标题内容
 
         #region 文本水平模式
 
@@ -274,7 +274,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (HorizontalAlignment)GetValue(LabelHorizontalAlignmentProperty); }
         }
 
-        #endregion
+        #endregion 文本水平模式
 
         #region 标题宽度
 
@@ -292,7 +292,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (GridLength)GetValue(LabelWidthProperty); }
         }
 
-        #endregion
+        #endregion 标题宽度
 
         #region 文本垂直模式
 
@@ -310,7 +310,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (VerticalAlignment)GetValue(TextVerticalAlignmentProperty); }
         }
 
-        #endregion
+        #endregion 文本垂直模式
 
         #region 内容Margin
 
@@ -328,7 +328,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (Thickness)GetValue(ContentMarginProperty); }
         }
 
-        #endregion
+        #endregion 内容Margin
 
         #region Label Margin 
 
@@ -346,7 +346,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (Thickness)GetValue(LabelMarginProperty); }
         }
 
-        #endregion
+        #endregion Label Margin 
 
         #region TextBox Margin
 
@@ -364,7 +364,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (Thickness)GetValue(TextBoxMarginProperty); }
         }
 
-        #endregion
+        #endregion TextBox Margin
 
         #region Button Margin
 
@@ -382,7 +382,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (Thickness)GetValue(ButtonMarginProperty); }
         }
 
-        #endregion
+        #endregion Button Margin
 
         #region 已选择
 
@@ -409,7 +409,7 @@ namespace WHLib_Toolkit.UIControl.Control
             get { return (bool?)GetValue(IsPathExistProperty); }
         }
 
-        #endregion
+        #endregion 已选择
 
         #region 文本变化路由事件
 
@@ -427,7 +427,7 @@ namespace WHLib_Toolkit.UIControl.Control
             remove { this.RemoveHandler(TextChangeRoutedEvent, value); }
         }
 
-        #endregion
+        #endregion 文本变化路由事件
 
         #region 路径对象存在路由事件
 
@@ -445,9 +445,9 @@ namespace WHLib_Toolkit.UIControl.Control
             remove { this.RemoveHandler(IsPathExistRoutedEvent, value); }
         }
 
-        #endregion
+        #endregion 路径对象存在路由事件
 
-        #endregion
+        #endregion 依赖项属性
 
         #region 属性
 
@@ -475,10 +475,10 @@ namespace WHLib_Toolkit.UIControl.Control
             ButtonWidth = double.NaN;
             IsPathExist = false;
         }
-        #endregion
+        #endregion 构造函数
 
         #region 方法
-        #endregion
+        #endregion 方法
 
         #region 控件方法
         /// <summary>
@@ -491,13 +491,13 @@ namespace WHLib_Toolkit.UIControl.Control
             switch (ControlType)
             {
                 case EnumControlType.LoadFile:
-                    WH_CommonFunc.OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    _ = WH_CommonFunc.OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
                     break;
                 case EnumControlType.SaveFile:
-                    WH_CommonFunc.OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    _ = WH_CommonFunc.OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
                     break;
                 case EnumControlType.SelectPath:
-                    WH_CommonFunc.OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory);
+                    _ = WH_CommonFunc.OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory);
                     break;
                 default:
                     break;
@@ -531,7 +531,6 @@ namespace WHLib_Toolkit.UIControl.Control
             this.RaiseEvent(args);
         }
 
-        #endregion
-
+        #endregion 控件方法
     }
 }
