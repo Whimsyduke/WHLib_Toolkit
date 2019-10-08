@@ -491,13 +491,13 @@ namespace WHLib_Toolkit.UIControl.Control
             switch (ControlType)
             {
                 case EnumControlType.LoadFile:
-                    _ = WH_CommonFunc.OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    using (WH_CommonFunc.OpenFileDialogGetOpenFile(TextBox_Path, Filter, TitleDescription, DefaultDirectory)) { };
                     break;
                 case EnumControlType.SaveFile:
-                    _ = WH_CommonFunc.OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory);
+                    using (WH_CommonFunc.OpenFileDialogGetSavePath(TextBox_Path, Filter, TitleDescription, DefaultDirectory)) { };
                     break;
                 case EnumControlType.SelectPath:
-                    _ = WH_CommonFunc.OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory);
+                    using (WH_CommonFunc.OpenDirectoryDialogGetFolder(TextBox_Path, TitleDescription, DefaultDirectory)) { };
                     break;
                 default:
                     break;

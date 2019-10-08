@@ -26,6 +26,7 @@ namespace WHLib_Toolkit.Sample
 
         private void WH_SearchableListView_SearchChangeHandler(object sender, TextChangedEventArgs e)
         {
+            MessageBox.Show("1");
         }
     }
 }

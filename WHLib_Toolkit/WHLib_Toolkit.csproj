@@ -76,6 +76,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="UIControl\Control\WH_SearchableListView.cs" />
+    <Compile Include="UIControl\Control\WH_SearchableListViewItem.cs" />
+    <Compile Include="UIControl\Control\WH_SearchableTreeView.cs" />
+    <Compile Include="UIControl\Control\WH_SearchableTreeViewItem.cs" />
     <Compile Include="UIControl\Control\WH_SelectPathControl.xaml.cs">
       <DependentUpon>WH_SelectPathControl.xaml</DependentUpon>
     </Compile>
