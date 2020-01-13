@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHLib_Toolkit", "WHLib_Tool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHLib_Toolkit.Sample", "WHLib_Toolkit.Sample\WHLib_Toolkit.Sample.csproj", "{D32BEC4A-5F89-4FF3-8D75-D2F780B87D7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHLib_Toolkit_Net4", "WHLib_Toolkit_Net4\WHLib_Toolkit_Net4.csproj", "{F6DEBE26-8A1C-4D37-B58A-708255A089F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D32BEC4A-5F89-4FF3-8D75-D2F780B87D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32BEC4A-5F89-4FF3-8D75-D2F780B87D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32BEC4A-5F89-4FF3-8D75-D2F780B87D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6DEBE26-8A1C-4D37-B58A-708255A089F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6DEBE26-8A1C-4D37-B58A-708255A089F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6DEBE26-8A1C-4D37-B58A-708255A089F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6DEBE26-8A1C-4D37-B58A-708255A089F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0.0</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/996icu/996.ICU/blob/master/license</licenseUrl>
+    <projectUrl>https://github.com/Whimsyduke/SC2_CombineData</projectUrl>
+    <iconUrl>https://github.com/Whimsyduke/SC2_GameTranslater/blob/master/IconForUse/Icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WH库 - WPF控件工具集</description>
+    <releaseNotes>Add：打开保存路径控件。</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>WPF Whimsyduke</tags>
+  </metadata>
+</package>
